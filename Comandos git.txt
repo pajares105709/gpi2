@@ -1,0 +1,24 @@
+git clone https://github.com/pajares105709/gpi2.git
+	Para descargar lo de 'master'
+
+Cambiar de rama:
+	git checkout -b Ivan/Pablo/Aritz
+		Para cambiar de rama
+
+Para subir a la rama:
+	git push -u origin Ivan/Pablo/Aritz
+		Para subir a la rama
+
+En la página de git, pestaña branches:
+	Solicitar 'pull request'
+		Ivan tiene que aceptar los cambios para que se reflejen en 'master'
+
+Para añadir archivos: 
+	git add -A
+	
+Para hacer commit: 	
+	git commit -m "Mensaje del commit"
+
+
+
+
