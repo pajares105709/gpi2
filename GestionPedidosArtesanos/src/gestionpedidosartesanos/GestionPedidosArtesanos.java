@@ -16,6 +16,10 @@ public class GestionPedidosArtesanos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        VentanaPedidos ventanaPedidos = new VentanaPedidos();
+        ventanaPedidos.setVisible(true);
+        
     }
     
 }
