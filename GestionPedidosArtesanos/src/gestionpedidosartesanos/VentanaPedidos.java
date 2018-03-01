@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionpedidosartesanos;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-/**
- *
- * @author linux1
- */
+
 public class VentanaPedidos extends javax.swing.JFrame {
 
    
@@ -79,9 +72,9 @@ public class VentanaPedidos extends javax.swing.JFrame {
 
         jLabel1.setText("DIRECCIÓN");
 
-        jLabel2.setText("Producto 1");
+        jLabel2.setText("Mesas");
 
-        jLabel3.setText("Producto 2");
+        jLabel3.setText("Sillas");
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +90,11 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
+            }
+        });
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField3KeyReleased(evt);
             }
         });
 
@@ -228,17 +226,24 @@ public class VentanaPedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        cantMesa= new Integer(jTextField2.getText());
+        
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        cantSilla= new Integer(jTextField3.getText());
+       
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
-            CalcularTotales();
+        cantMesa = new Integer(jTextField2.getText());    
+        CalcularTotales();
     }//GEN-LAST:event_jTextField2KeyReleased
 
+    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
+        cantSilla = new Integer(jTextField3.getText());    
+        CalcularTotales();
+    }//GEN-LAST:event_jTextField3KeyReleased
+
+   
     private void iniciarValores(){
         jLabel6.setText(precioMesa.toString());
         jLabel7.setText(precioSilla.toString());
@@ -249,6 +254,8 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel14.setText(totalSinIva.toString());        
         jLabel15.setText(totalIva.toString());        
         jLabel16.setText(totalConIva.toString());
+        
+        jLabel17.setText("21%");
     }
     
     private void calcularPrecios(){
