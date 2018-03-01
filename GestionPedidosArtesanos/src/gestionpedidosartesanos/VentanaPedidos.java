@@ -30,7 +30,9 @@ public class VentanaPedidos extends javax.swing.JFrame {
     private Double totalSinIva = 0.0;
     private Double totalConIva = 0.0;
     private Double totalIva = 0.0;
-    private Double iva = 0.21;
+    private final Double iva = 0.21;
+    
+    private String direccion = "";
     
     public VentanaPedidos() {
         initComponents();
@@ -67,6 +69,11 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
             }
         });
 
@@ -243,6 +250,10 @@ public class VentanaPedidos extends javax.swing.JFrame {
         CalcularTotales();
     }//GEN-LAST:event_jTextField3KeyReleased
 
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        direccion =jTextField1.getText();
+    }//GEN-LAST:event_jTextField1KeyReleased
+
    
     private void iniciarValores(){
         jLabel6.setText(precioMesa.toString());
@@ -255,7 +266,7 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel15.setText(totalIva.toString());        
         jLabel16.setText(totalConIva.toString());
         
-        jLabel17.setText("21%");
+        jLabel17.setText(iva.toString());
     }
     
     private void calcularPrecios(){
@@ -299,6 +310,10 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel14.setText(totalSinIva.toString());        
         jLabel15.setText(totalIva.toString());        
         jLabel16.setText(totalConIva.toString());
+    }
+    
+    public String getDireccion(){
+        return direccion;
     }
     /**
      * @param args the command line arguments
