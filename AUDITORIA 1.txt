@@ -7,7 +7,7 @@ Revisión de evidencias:
 	Documento de requisitos: EspecificacionRequisitos.ods
 	Wbs: WBS.ods
 	Actividades: https://gpiii.workast.io/all
-	Planning: https://gpiii.workast.io/all
+	Planning: https://gpiii.workast.io/all y DefinicionActividades.ods
 	Partes de trabajo: https://gpiii.workast.io/all
 
 Extras:
