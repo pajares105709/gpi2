@@ -423,4 +423,4 @@ public class VentanaPedidos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
-}
+} 
