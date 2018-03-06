@@ -1,8 +1,18 @@
 
 package gestionpedidosartesanos;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class VentanaPedidos extends javax.swing.JFrame {
@@ -128,6 +138,11 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel17.setText("#IVA=XX%");
 
         jButton1.setText("CONFIRMAR");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -254,6 +269,44 @@ public class VentanaPedidos extends javax.swing.JFrame {
         direccion =jTextField1.getText();
     }//GEN-LAST:event_jTextField1KeyReleased
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        try {
+            // TODO add your handling code here:
+            generarFactura();
+        } catch (IOException ex) {
+            Logger.getLogger(VentanaPedidos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    
+    private void generarFactura() throws FileNotFoundException, IOException{
+        final String path=System.getProperty("user.dir")+File.separator+"data"+File.separator+"plantilla.txt";
+        Random rnd = new Random();
+        String nombre = String.valueOf(rnd.nextInt());
+        final String nomFich=System.getProperty("user.dir")+File.separator+"data"+File.separator+"factura_" + nombre + ".txt";
+        try (FileReader f = new FileReader(path)) {
+            BufferedReader br = new BufferedReader(f);
+            String linea;
+            try (FileWriter fw = new FileWriter(nomFich, false)) {
+                PrintWriter pw = new PrintWriter(fw);
+                while((linea=br.readLine())!=null){
+                    linea=linea.replace("produc1", "Mesas");
+                    linea=linea.replace("produc2", "Sillas");
+                    linea=linea.replace("precio1", String.valueOf(precioMesa));
+                    linea=linea.replace("precio2", String.valueOf(precioSilla));
+                    linea=linea.replace("cant1", String.valueOf(cantMesa));
+                    linea=linea.replace("cant2", String.valueOf(cantSilla));
+                    linea=linea.replace("total1", String.valueOf(totalMesa));
+                    linea=linea.replace("total2", String.valueOf(totalSilla));
+                    linea=linea.replace("coniva", String.valueOf(totalConIva));
+                    linea=linea.replace("siniva", String.valueOf(totalSinIva));
+                    linea=linea.replace("iva", String.valueOf(totalIva));
+                    linea=linea.replace("direccion_fac", direccion);
+                    pw.println(linea.replace("usuario_fac", nombre));
+                    }
+            }
+        }
+    }
    
     private void iniciarValores(){
         jLabel6.setText(precioMesa.toString());

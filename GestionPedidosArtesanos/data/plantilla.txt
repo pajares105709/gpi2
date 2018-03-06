@@ -1,0 +1,20 @@
+***************************************************************************************************
+
+						FACTURA
+
+
+								   
+***************************************************************************************************
+
+																				
+
+NOMBRE: usuario_fac
+DIRECCIÓN: direccion_fac
+
+                        PRECIO              CANTIDAD                    TOTALES
+produc1                   precio1                cant1                            total1
+produc2                  precio2                cant2                            total2
+
+                                            IVA(21%)                    iva
+                                            Sin IVA                     siniva
+                                            Con IVA                     coniva
