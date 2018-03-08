@@ -12,4 +12,5 @@ Revisión de evidencias:
 
 Extras:
 	Información proyecto: ActaReuniónInicialCliente.odt y DescripcionProyecto.odt
+	Comunicación equipo: https://gpiii.slack.com
 	
