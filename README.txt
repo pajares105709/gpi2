@@ -16,7 +16,8 @@ Código del proyecto
 	-> GestionPedidosArtesanos: Encontramos el código implementado de la aplicación
 
 Documentación
-	-> Documentacion: Encontramos los siguientes documentos:
+	-> Documentacion Externa: Encontramos los siguientes documentos:
+
 		-Planes de pruebas
 		-Estructura del repositorio
 		-Descripción del Proyecto de interés interno
@@ -32,5 +33,3 @@ Documentación
 Directorio raíz
 	-> Comandos git: Comandos de interés para actualizar las ramas o descarga general.
 	-> Auditoría 1: Contiene una relación de lo que se va a auditar con su localización.
-		
-
