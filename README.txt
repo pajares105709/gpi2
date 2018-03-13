@@ -16,7 +16,7 @@ Código del proyecto
 	-> GestionPedidosArtesanos: Encontramos el código implementado de la aplicación
 
 Documentación
-	-> Documentacion: Encontramos los siguientes documentos:
+	-> Documentacion Externa: Encontramos los siguientes documentos:
 		-Planes de pruebas
 		-Estructura del repositorio
 		-Descripción del Proyecto de interés interno
