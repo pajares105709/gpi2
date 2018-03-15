@@ -1,0 +1,41 @@
+Revisión herramientas: 
+	Repositorio: https://github.com/pajares105709/gpi2
+
+	Gestión de actividades: https://gpiii.workast.io/all
+
+
+
+
+
+Revisión de evidencias: 
+	Definición estructura repositorio: 
+		https://github.com/pajares105709/gpi2/blob/master/Documentacion%20Externa/DefinicionEstructuraRepositorio.odt
+
+	Documento de requisitos: 
+		https://github.com/pajares105709/gpi2/blob/master/Planificacion/EspecificacionRequisitos.ods
+
+	Wbs: 
+		https://github.com/pajares105709/gpi2/blob/master/Planificacion/WBS.ods
+
+	Actividades: https://gpiii.workast.io/all
+
+	Planning: https://gpiii.workast.io/all y DefinicionActividades.ods
+
+	Partes de trabajo: https://gpiii.workast.io/all
+
+
+
+
+
+
+
+
+Extras:
+	Información proyecto: 
+		https://github.com/pajares105709/gpi2/blob/master/Documentacion%20Externa/ActaReuni%C3%B3nInicialCliente.odt	
+	
+		 https://github.com/pajares105709/gpi2/blob/master/Documentacion%20Externa/DescripcionProyecto.odt
+
+	Comunicación equipo: 
+		https://gpiii.slack.com
+	
