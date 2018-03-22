@@ -34,11 +34,18 @@ AUDITORIA 2:
 Solicitud cambio/añadido requisito: 
 	https://github.com/pajares105709/gpi2/blob/master/Planificacion/EspecificacionRequisitos.ods
 
+Órdenes del día:
+	https://github.com/pajares105709/gpi2/blob/master/Planificacion/OrdenesDelDia.odt
+
+Gestión riesgos:
+	https://github.com/pajares105709/gpi2/blob/master/Otros/GestionRiesgos.ods
 
 
 
 
-Extras:
+
+
+EXTRAS:
 	Información proyecto: 
 		https://github.com/pajares105709/gpi2/blob/master/Documentacion%20Externa/ActaReuni%C3%B3nInicialCliente.odt	
 	
