@@ -39,6 +39,8 @@ Solicitud cambio/añadido requisito:
 
 Gestión riesgos:
 	https://github.com/pajares105709/gpi2/blob/master/Otros/GestionRiesgos.ods
+1 test unitario e integración:
+	#####?????
 
 
 

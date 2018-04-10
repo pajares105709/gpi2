@@ -10,9 +10,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Date;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 public class VentanaPedidos extends javax.swing.JFrame {
@@ -43,6 +45,7 @@ public class VentanaPedidos extends javax.swing.JFrame {
     private final Double iva = 0.21;
     
     private String direccion = "";
+    private String nombre = "";
     
     public VentanaPedidos() {
         initComponents();
@@ -59,8 +62,6 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -74,6 +75,10 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner2 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,28 +98,6 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel2.setText("Mesas");
 
         jLabel3.setText("Sillas");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField2KeyReleased(evt);
-            }
-        });
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField3KeyReleased(evt);
-            }
-        });
 
         jLabel5.setText("Cantidad");
 
@@ -152,6 +135,49 @@ public class VentanaPedidos extends javax.swing.JFrame {
 
         jLabel4.setText("IVA");
 
+        jLabel8.setText("NOMBRE");
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
+            }
+        });
+
+        jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner1StateChanged(evt);
+            }
+        });
+        jSpinner1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jSpinner1FocusLost(evt);
+            }
+        });
+        jSpinner1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jSpinner1PropertyChange(evt);
+            }
+        });
+        jSpinner1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jSpinner1KeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jSpinner1KeyReleased(evt);
+            }
+        });
+
+        jSpinner2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSpinner2StateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,29 +185,26 @@ public class VentanaPedidos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(50, 50, 50)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGap(1, 1, 1)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jTextField2))))
-                                        .addGap(62, 62, 62))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabel4)
-                                        .addGap(18, 18, 18)))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(102, 102, 102)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jSpinner2)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jSpinner1)))
+                                        .addGap(62, 62, 62)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
                                     .addGroup(layout.createSequentialGroup()
@@ -200,21 +223,30 @@ public class VentanaPedidos extends javax.swing.JFrame {
                                             .addComponent(jLabel10)))
                                     .addComponent(jLabel14)
                                     .addComponent(jLabel15)
-                                    .addComponent(jLabel16))))))
-                .addContainerGap(85, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel16)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel8))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 73, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(48, 48, 48)
+                    .addComponent(jLabel8)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel9)
@@ -222,16 +254,16 @@ public class VentanaPedidos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel10)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel11))
-                .addGap(80, 80, 80)
+                    .addComponent(jLabel11)
+                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(79, 79, 79)
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -241,7 +273,7 @@ public class VentanaPedidos extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -256,24 +288,6 @@ public class VentanaPedidos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-       
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
-        cantMesa = new Integer(jTextField2.getText());    
-        CalcularTotales();
-    }//GEN-LAST:event_jTextField2KeyReleased
-
-    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
-        cantSilla = new Integer(jTextField3.getText());    
-        CalcularTotales();
-    }//GEN-LAST:event_jTextField3KeyReleased
-
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         direccion =jTextField1.getText();
     }//GEN-LAST:event_jTextField1KeyReleased
@@ -281,18 +295,89 @@ public class VentanaPedidos extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         try {
             // TODO add your handling code here:
-            generarFactura();
+            if ((nombre.length() == 0) || (direccion.length() == 0)){
+                //Aviso de nombre o direccion vacia
+                JOptionPane.showMessageDialog(rootPane, "Debes introducir un nombre y una dirección válidos");
+            }
+            else{
+                generarFactura();
+            }
+            
         } catch (IOException ex) {
             Logger.getLogger(VentanaPedidos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+        // TODO add your handling code here:
+        nombre =jTextField4.getText();
+    }//GEN-LAST:event_jTextField4KeyReleased
+
+    private void jSpinner1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jSpinner1PropertyChange
+        // TODO add your handling code here:
+        //mesas
+        //cantMesa = (Integer) jSpinner1.getValue();
+        //CalcularTotales();
+    }//GEN-LAST:event_jSpinner1PropertyChange
+
+    private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
+        // TODO add your handling code here:
+        //mesas
+        cantMesa = (Integer) jSpinner1.getValue();
+        if (cantMesa < 0){
+            cantMesa = 0;
+            jSpinner1.setValue(0);
+        }
+        CalcularTotales();
+    }//GEN-LAST:event_jSpinner1StateChanged
+
+    private void jSpinner1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSpinner1KeyReleased
+        // TODO add your handling code here:
+        //mesas
+        //cantMesa = (Integer) jSpinner1.getValue();
+        //CalcularTotales();
+        
+    }//GEN-LAST:event_jSpinner1KeyReleased
+
+    private void jSpinner1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jSpinner1KeyPressed
+        // TODO add your handling code here:
+        //mesas
+        //cantMesa = (Integer) jSpinner1.getValue();
+        //CalcularTotales();
+    }//GEN-LAST:event_jSpinner1KeyPressed
+
+    private void jSpinner1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jSpinner1FocusLost
+        // TODO add your handling code here:
+        //mesas
+        //cantMesa = (Integer) jSpinner1.getValue();
+        //CalcularTotales();
+    }//GEN-LAST:event_jSpinner1FocusLost
+
+    private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
+        // TODO add your handling code here:
+        //sillas
+        cantSilla = (Integer) jSpinner2.getValue();
+        if (cantSilla < 0){
+            cantSilla = 0;
+            jSpinner2.setValue(0);
+        }
+        CalcularTotales();
+    }//GEN-LAST:event_jSpinner2StateChanged
+
     
     private void generarFactura() throws FileNotFoundException, IOException{
         final String path=System.getProperty("user.dir")+File.separator+"data"+File.separator+"plantilla.txt";
         Random rnd = new Random();
-        String nombre = String.valueOf(rnd.nextInt());
-        final String nomFich=System.getProperty("user.dir")+File.separator+"data"+File.separator+"factura_" + nombre + ".txt";
+        String nombreFac = nombre;
+        String fecha = new Date().toString();
+        nombreFac = fecha + "_" + nombreFac;
+        
+        //String nombre = String.valueOf(rnd.nextInt());
+        final String nomFich=System.getProperty("user.dir")+File.separator+"data"+File.separator + nombreFac + ".txt";
         try (FileReader f = new FileReader(path)) {
             BufferedReader br = new BufferedReader(f);
             String linea;
@@ -312,9 +397,12 @@ public class VentanaPedidos extends javax.swing.JFrame {
                     linea=linea.replace("iva", String.valueOf(totalIva));
                     linea=linea.replace("direccion_fac", direccion);
                     pw.println(linea.replace("usuario_fac", nombre));
+                    
                     }
+                JOptionPane.showMessageDialog(rootPane, "Generada factura " + nombreFac);
             }
         }
+        
     }
    
     private void iniciarValores(){
@@ -377,6 +465,11 @@ public class VentanaPedidos extends javax.swing.JFrame {
     public String getDireccion(){
         return direccion;
     }
+    
+    public String getNombre(){
+        return nombre;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -428,9 +521,11 @@ public class VentanaPedidos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 } 
