@@ -462,13 +462,6 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel16.setText(totalConIva.toString());
     }
     
-    public String getDireccion(){
-        return direccion;
-    }
-    
-    public String getNombre(){
-        return nombre;
-    }
     
     /**
      * @param args the command line arguments
