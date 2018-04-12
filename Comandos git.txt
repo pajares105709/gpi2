@@ -19,6 +19,10 @@ Para añadir archivos:
 Para hacer commit: 	
 	git commit -m "Mensaje del commit"
 
+Para actualizar mi rama con lo del master:
+	git checkout Ivan/Pablo/Aritz
+	git merge master
+
 
 
 
