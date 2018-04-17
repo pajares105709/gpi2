@@ -419,7 +419,7 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel17.setText(iva.toString());
     }
     
-    private void calcularPrecios(){
+    public void calcularPrecios(){
         totalMesa = precioMesa * cantMesa;
         totalSilla = precioSilla * cantSilla;
 
@@ -428,7 +428,30 @@ public class VentanaPedidos extends javax.swing.JFrame {
         jLabel11.setText(totalSilla.toString());
  
     }
+ 
+    public void setCantMesa(int cant) {
+        cantMesa = cant;
+    }
+ 
+    public void setCantSilla(int cant) {
+        cantSilla = cant;
+    }
     
+    public Double getTotalMesa() {
+        return totalMesa;
+    }
+    
+    public Double getTotalSilla() {
+        return totalSilla;
+    }
+    
+    public Double getPrecioMesa() {
+        return precioMesa;
+    }
+    
+    public Double getPrecioSilla() {
+        return precioSilla;
+    }
     
     private void CalcularTotales() {
         calcularPrecios();
